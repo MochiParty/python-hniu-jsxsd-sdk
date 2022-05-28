@@ -15,8 +15,8 @@ class Service():
 
     def login(self, username, password):
         encoded = self.authEncoded()
-        code = utils.encoded(username,password,encoded) 
-        logger.debug("account {}, encoded {}".format(username,code))
+        code = utils.encoded(username, password, encoded)
+        logger.debug("account {}, encoded {}".format(username, code))
         url = asc.getApi(asc.登陆)
         payload = {
             "userAccount": username,
@@ -34,5 +34,3 @@ class Service():
         self.session.cookies.update(req.cookies)
         encoded = req.text
         return encoded
-
-    
